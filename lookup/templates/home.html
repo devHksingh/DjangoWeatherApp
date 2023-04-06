@@ -11,7 +11,14 @@
 <!-- data display -->
 <ol>
  {%for data in api.daily.data%}
-        <li>{{data.day}}</li>
+        <li>
+            <p>day:{{data.day}}<br>
+               Weather:{{data.weather}}<br>
+               Forecast:{{data.summary}}<br>
+               humidity:{{data.humidity}}<br>
+               ozone:{{data.ozone}}<br>
+            </p>
+        </li>
  {%endfor%}
 </ol>
 
@@ -19,5 +26,6 @@
 {{api.daily.data.0}}<br><br>
 
 {{api.daily.data.1}}<br><br>
+
 
 {%endblock%}
