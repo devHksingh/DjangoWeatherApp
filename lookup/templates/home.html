@@ -4,7 +4,20 @@
 {%block content%}
 
 <h1>Hello world!..$</h1>
-<br>
-{{api}}
+<br><br><br>
+
+{{api.daily.data|length}}
+
+<!-- data display -->
+<ol>
+ {%for data in api.daily.data%}
+        <li>{{data.day}}</li>
+ {%endfor%}
+</ol>
+
+<br><br><br>
+{{api.daily.data.0}}<br><br>
+
+{{api.daily.data.1}}<br><br>
 
 {%endblock%}

@@ -10,14 +10,14 @@ def home(request):
     
     load_dotenv()
     api_key =os.getenv('RapidAPI-Key')
-    host = os.getenv('X-RapidAPI-Host')
+    # host = os.getenv('X-RapidAPI-Host')
 
-    url="https://ai-weather-by-meteosource.p.rapidapi.com/current"
+    url="https://ai-weather-by-meteosource.p.rapidapi.com/daily"
     querystring = {"place_id":"Delhi","timezone":"auto","language":"en","units":"metric"}
 
     headers = {
 	"X-RapidAPI-Key": api_key,
-	"X-RapidAPI-Host": host
+	"X-RapidAPI-Host": "ai-weather-by-meteosource.p.rapidapi.com"
     }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
