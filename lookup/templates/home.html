@@ -6,26 +6,25 @@
 <h1>Hello world!..$</h1>
 <br><br><br>
 
-{{api.daily.data|length}}
+<!-- {{api.daily.data|length}} -->
 
-<!-- data display -->
-<ol>
- {%for data in api.daily.data%}
-        <li>
-            <p>day:{{data.day}}<br>
-               Weather:{{data.weather}}<br>
-               Forecast:{{data.summary}}<br>
-               humidity:{{data.humidity}}<br>
-               ozone:{{data.ozone}}<br>
-            </p>
-        </li>
- {%endfor%}
-</ol>
-
-<br><br><br>
-{{api.daily.data.0}}<br><br>
-
-{{api.daily.data.1}}<br><br>
-
-
+{% if api%}
+    {% if api == "Error..." %}
+        There was an error, please try again
+    {%else%}
+        <!-- data display -->
+        <ol>
+                {%for data in api.daily.data%}
+            <li>
+                <p>day:{{data.day}}<br>
+                    Weather:{{data.weather}}<br>
+                    Forecast:{{data.summary}}<br>
+                    humidity:{{data.humidity}}<br>
+                    ozone:{{data.ozone}}<br>
+                </p>
+            </li>
+            {%endfor%}
+        </ol>
+    {%endif%}
+{%endif%}
 {%endblock%}
