@@ -9,25 +9,16 @@ def home(request):
     from dotenv import load_dotenv
     
     load_dotenv()
+    
     api_key =os.getenv('RapidAPI-Key')
-    # host = os.getenv('X-RapidAPI-Host')
-
-    url="https://ai-weather-by-meteosource.p.rapidapi.com/daily"
-    querystring = {"place_id":"Delhi","timezone":"auto","language":"en","units":"metric"}
-
-    headers = {
-	"X-RapidAPI-Key": api_key,
-	"X-RapidAPI-Host": "ai-weather-by-meteosource.p.rapidapi.com"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    # print(response.text)
+    url = f"https://api.weatherapi.com/v1/current.json?key={api_key}&q=NEW Delhi&aqi=no"
+    api_request= requests.get(url)
+    # print(response)
 
     try:
-        api=json.loads(response.content)
+        api=json.loads(api_request.content)
     except Exception as e:
-        api = "Error........."
+        api = "Error..."
 
     return render(request,'home.html',{'api':api})
 

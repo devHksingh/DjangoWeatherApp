@@ -5,15 +5,16 @@
 
 <h1>Hello world!..$</h1>
 <br><br><br>
+{{api}}
+<!-- {{api.daily.data|length}}
+{{api.daily}} -->
 
-<!-- {{api.daily.data|length}} -->
-
-{% if api%}
+<!-- {% if api%}
     {% if api == "Error..." %}
         There was an error, please try again
-    {%else%}
+    {%else%} -->
         <!-- data display -->
-        <ol>
+        <!-- <ol>
                 {%for data in api.daily.data%}
             <li>
                 <p>day:{{data.day}}<br>
@@ -26,5 +27,5 @@
             {%endfor%}
         </ol>
     {%endif%}
-{%endif%}
+{%endif%} -->
 {%endblock%}
