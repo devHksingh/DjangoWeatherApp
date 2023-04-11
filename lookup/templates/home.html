@@ -4,7 +4,7 @@
 {%block content%}
 {% load static %} 
 
-<div class="container-md">
+<!-- <div class="container-md">
     <div class="row">
         <div class="col-sm border border-danger">1</div>
         <div class="col-sm border border-danger">2</div>
@@ -21,7 +21,150 @@
         <div class="col-md-8 border border-success">Main content</div>
         <div class="col-md-4 border border-success">Sildebar</div>
     </div>
+</div> -->
+
+<!-- Gutter -->
+
+<!-- <div class="container px-4 mt-5 border border-info ">
+    <div class="row gx-5">
+        <div class="col">
+            <div class="p-3 border">custom column</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border">custom column</div>
+        </div>
+    </div>
+</div> -->
+<br><br><br><br>
+
+<!-- test grid -->
+
+<div class="container-md weather__card">
+    <div class="row border border-danger">
+        <div class="col-md-5 border border-warning text-center"><h2>15&deg;</h2></div>
+        <div class="col-md-2 border border-primary text-center "><img src="https://svgur.com/i/oKG.svg"></div>
+        <div class="col-md-5 border border-white pt-3">
+                <h5>Tuesday, 10 AM</h5>
+                <h3 class="mt-2">San Francisco</h3>
+                <span class="weather__description mt-2">Mostly Cloudy</span>
+        </div>
+    </div>
+    <div class="row justify-content-md-center text-center border border-info mt-5">
+        <div class="col col-lg-2">UV:</div>
+        <div class="col-md-auto">Rain</div>
+        <div class="col col-lg-2">Snow</div>
+    </div>
 </div>
+
+<div class="weather__forecast d-flex flex-row justify-content-center align-items-center mt-3">
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Wed</span>
+        <img src="https://svgur.com/i/oJe.svg">
+        <span>13&deg;</span>
+    </div>
+
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Thu</span>
+        <img src="https://svgur.com/i/oKG.svg">
+        <span>15&deg;</span>
+    </div>
+
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Wed</span>
+        <img src="https://svgur.com/i/oKG.svg">
+        <span>15&deg;</span>
+    </div>
+
+   
+</div>
+
+
+<!-- Weather -->
+<!-- <div class="container mt-5">
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="weather__card">
+            <div class="d-flex flex-row justify-content-center align-items-center">
+                <div class="p-3">
+                    <h2>15&deg;</h2>
+                </div>
+                <div class="p-3">
+                    <img src="https://svgur.com/i/oKG.svg">
+                </div>
+                <div class="p-3">
+                    <h5>Tuesday, 10 AM</h5>
+                    <h3>San Francisco</h3>
+                    <span class="weather__description">Mostly Cloudy</span>
+                </div>
+            </div>
+            <div class="weather__status d-flex flex-row justify-content-center align-items-center mt-3">
+                <div class="p-4 d-flex justify-content-center align-items-center">
+                    <img src="https://svgur.com/i/oHw.svg">
+                    <span>10%</span>
+                </div>
+                <div class="p-4 d-flex justify-content-center align-items-center">
+                    <img src="https://svgur.com/i/oH_.svg">
+                    <span>0.53 mB</span>
+                </div>
+                <div class="p-4 d-flex justify-content-center align-items-center">
+                    <img src="https://svgur.com/i/oKS.svg">
+                    <span>10 km/h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Weather Forecast -->
+<!-- <div class="weather__forecast d-flex flex-row justify-content-center align-items-center mt-3">
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Wed</span>
+        <img src="https://svgur.com/i/oJe.svg">
+        <span>13&deg;</span>
+    </div>
+
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Thu</span>
+        <img src="https://svgur.com/i/oKG.svg">
+        <span>15&deg;</span>
+    </div>
+
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Wed</span>
+        <img src="https://svgur.com/i/oKG.svg">
+        <span>15&deg;</span>
+    </div>
+
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Fri</span>
+        <img src="https://svgur.com/i/oJe.svg">
+        <span>13&deg;</span>
+    </div>
+
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Sat</span>
+        <img src="https://svgur.com/i/oJx.svg">
+        <span>13&deg;</span>
+    </div>
+
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Sun</span>
+        <img src="https://svgur.com/i/oJU.svg">
+        <span>11&deg;</span>
+    </div>
+
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Mon</span>
+        <img src="https://svgur.com/i/oJU.svg">
+        <span>11&deg;</span>
+    </div>
+
+    <div class="p-4 d-flex flex-column justify-content-center align-items-center">
+        <span>Tue</span>
+        <img src="https://svgur.com/i/oJy.svg">
+        <span>6&deg;</span>
+    </div>
+</div> -->
+
 
 <!-- <br><br><br>
 {{api}}
