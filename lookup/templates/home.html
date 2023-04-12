@@ -40,44 +40,61 @@
 <!-- test grid -->
 
 <div class="container-md weather__card">
-    <div class="row border border-danger">
-        <div class="col-md-5 border border-warning text-center"><h2>15&deg;</h2></div>
-        <div class="col-md-2 border border-primary text-center "><img src="https://svgur.com/i/oKG.svg"></div>
-        <div class="col-md-5 border border-white pt-3">
-                <h5>Tuesday, 10 AM</h5>
-                <h3 class="mt-2">San Francisco</h3>
-                <span class="weather__description mt-2">Mostly Cloudy</span>
+    <div class="row ">
+        <div class="col-md-5 text-center py-3"><h2>{{api.current.temp_c}}&deg;</h2></div>
+        <div class="col-md-2 text-center "><img src="{{api.current.condition.icon}}"></div>
+        <div class="col-md-5  pt-3">
+                <h5>{{api.location.localtime}}</h5>
+                <h3 class="my-4">{{api.location.name}}, {{api.location.country}}</h3>
+                <span class="weather__description ">{{api.forecast.forecastday.0.day.condition.text}}</span>
         </div>
     </div>
-    <div class="row justify-content-md-center text-center border border-info mt-5">
-        <div class="col col-lg-2">UV:</div>
-        <div class="col-md-auto">Rain</div>
-        <div class="col col-lg-2">Snow</div>
+    <div class="row justify-content-md-center text-center  mt-5">
+        <div class="col col-lg-2">UV:{{api.forecast.forecastday.0.day.uv}}</div>
+        <div class="col-md-auto">Rain:{{api.forecast.forecastday.0.day.daily_chance_of_rain}}%</div>
+        <div class="col col-lg-2">Snow:{{api.forecast.forecastday.0.day.daily_chance_of_snow}}%</div>
     </div>
 </div>
 
 <div class="weather__forecast d-flex flex-row justify-content-center align-items-center mt-3">
     <div class="p-4 d-flex flex-column justify-content-center align-items-center">
-        <span>Wed</span>
-        <img src="https://svgur.com/i/oJe.svg">
-        <span>13&deg;</span>
+        <span>{{api.forecast.forecastday.0.date}}</span>
+        <img src="{{api.forecast.forecastday.0.day.condition.icon}}" alt="weather forecast icon">
+        <span>{{api.forecast.forecastday.0.day.mintemp_c}}&deg / {{api.forecast.forecastday.0.day.maxtemp_c}}&deg;</span>
     </div>
 
     <div class="p-4 d-flex flex-column justify-content-center align-items-center">
-        <span>Thu</span>
-        <img src="https://svgur.com/i/oKG.svg">
-        <span>15&deg;</span>
+        <span>{{api.forecast.forecastday.1.date}}</span>
+        <img src="{{api.forecast.forecastday.1.day.condition.icon}}" alt="weather forecast icon">
+        <span>{{api.forecast.forecastday.1.day.mintemp_c}}&deg / {{api.forecast.forecastday.1.day.maxtemp_c}}&deg;</span>
     </div>
 
     <div class="p-4 d-flex flex-column justify-content-center align-items-center">
-        <span>Wed</span>
-        <img src="https://svgur.com/i/oKG.svg">
-        <span>15&deg;</span>
+        <span>{{api.forecast.forecastday.2.date}}</span>
+        <img src="{{api.forecast.forecastday.2.day.condition.icon}}" alt="weather forecast icon">
+        <span>{{api.forecast.forecastday.2.day.mintemp_c}}&deg / {{api.forecast.forecastday.2.day.maxtemp_c}}&deg;</span>
     </div>
 
    
 </div>
+<!-- {{api.location.name}}<br><br>
+{{api.location.country}}<br><br>
+{{api.location.localtime}}<br><br>
+<br>
+{{api.forecast.forecastday.0.date}}<br><br>
+{{api.forecast.forecastday.1.date}}<br><br>
+{{api.forecast.forecastday.2.date}}<br><br>
 
+{{api.forecast.forecastday.0.date}}<br><br>
+{{api.forecast.forecastday.0.day.maxtemp_c}}<br><br>
+{{api.forecast.forecastday.0.day.mintemp_c}}<br><br>
+{{api.forecast.forecastday.0.day.daily_chance_of_rain}}<br><br>
+{{api.forecast.forecastday.0.day.daily_chance_of_snow}}<br><br>
+{{api.forecast.forecastday.0.day.condition.text}}<br><br>
+{{api.forecast.forecastday.0.day.condition.icon}}<br><br> -->
+<!-- <img src="{% static '{{api.forecast.forecastday.0.day.condition.icon}}'%}" alt="demo"></img> -->
+<!-- <img src="{{api.forecast.forecastday.0.day.condition.icon}}"> -->
+<!-- <br>{{api.forecast.forecastday.0.day.uv}}<br><br> -->
 
 <!-- Weather -->
 <!-- <div class="container mt-5">

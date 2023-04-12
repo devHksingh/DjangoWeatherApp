@@ -17,7 +17,7 @@ body {
   .weather__card {
     width: 800px;
     padding: 40px 30px;
-    background-color: #EEEEEE;
+    background-color: #928c8ce5;
     border-radius: 20px;
     color:#3C4048;
   }

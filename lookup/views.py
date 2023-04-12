@@ -11,7 +11,8 @@ def home(request):
     load_dotenv()
     
     api_key =os.getenv('RapidAPI-Key')
-    url = f"https://api.weatherapi.com/v1/current.json?key={api_key}&q=NEW Delhi&aqi=no"
+    url = f"https://api.weatherapi.com/v1/forecast.json?key={api_key}&q=New Delhi&days=3&aqi=no&alerts=yes"
+    
     api_request= requests.get(url)
     # print(response)
 
