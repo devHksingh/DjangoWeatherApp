@@ -10,18 +10,37 @@ def home(request):
     
     load_dotenv()
     
-    api_key =os.getenv('RapidAPI-Key')
-    url = f"https://api.weatherapi.com/v1/forecast.json?key={api_key}&q=New Delhi&days=3&aqi=no&alerts=yes"
+    if request.method == "POST":
+        # DO post Stuff
+        cityname = request.POST['cityname']
+        api_key =os.getenv('RapidAPI-Key')
+        url = f"https://api.weatherapi.com/v1/forecast.json?key={api_key}&q=" + cityname +"&days=3&aqi=no&alerts=yes"
     
-    api_request= requests.get(url)
-    # print(response)
+        api_request= requests.get(url)
+        # print(response)
 
-    try:
-        api=json.loads(api_request.content)
-    except Exception as e:
-        api = "Error..."
+        try:
+            api=json.loads(api_request.content)
+        except Exception as e:
+             api = "Error..."
 
-    return render(request,'home.html',{'api':api})
+        return render(request,'home.html',{'api':api}) 
+    else: 
+        # print('hi')
+        api_key =os.getenv('RapidAPI-Key')
+        url = f"https://api.weatherapi.com/v1/forecast.json?key={api_key}&q=New Delhi&days=3&aqi=no&alerts=yes"
+    
+        api_request= requests.get(url)
+        # print(response)
+
+        try:
+            api=json.loads(api_request.content)
+        except Exception as e:
+             api = "Error..."
+
+        return render(request,'home.html',{'api':api})   
+
+    
 
 def about(request):
     return render(request,'about.html',{})

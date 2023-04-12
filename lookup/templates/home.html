@@ -42,7 +42,7 @@
 <div class="container-md weather__card">
     <div class="row ">
         <div class="col-md-5 text-center py-3"><h2>{{api.current.temp_c}}&deg;</h2></div>
-        <div class="col-md-2 text-center "><img src="{{api.current.condition.icon}}"></div>
+        <div class="col-md-2 text-center "><img src="{{api.current.condition.icon}}" alt="current weather icon"></div>
         <div class="col-md-5  pt-3">
                 <h5>{{api.location.localtime}}</h5>
                 <h3 class="my-4">{{api.location.name}}, {{api.location.country}}</h3>
